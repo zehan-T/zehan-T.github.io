@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Zehan Tian, Soprano</title>
+<meta name="description" content="Production and portrait photographs of the soprano Zehan Tian.">
+<meta name="theme-color" content="#F7F3EB">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery — Zehan Tian, Soprano">
+<meta property="og:description" content="Production and portrait photographs of the soprano Zehan Tian.">
+<meta property="og:image" content="assets/images/og/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+
+<!-- Set the theme and language before first paint, so the page never flashes
+     the wrong one. Mirrors the logic in site.js. -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("zt.theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+    document.documentElement.setAttribute("data-theme", t);
+    var l = localStorage.getItem("zt.lang");
+    if (!l) l = (navigator.language || "en").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+    document.documentElement.setAttribute("lang", l);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body class="">
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到主要内容</span></a>
+
+<!-- ==========================================================================
+     HEADER
+     This block is identical on every page. If you change the navigation,
+     change it in all .html files (see README → "Editing the navigation").
+     ======================================================================= -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="index.html">
+      <span data-lang="en">Zehan&nbsp;Tian</span>
+      <span data-lang="zh">田泽涵</span>
+      <small>
+        <span data-lang="en">Soprano</span>
+        <span data-lang="zh">女高音</span>
+      </small>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-nav="home" href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+        <li><a class="nav__link" data-nav="about" href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+        <li><a class="nav__link" data-nav="media" href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+        <li><a class="nav__link" data-nav="gallery" aria-current="page" href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        <li><a class="nav__link" data-nav="calendar" href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+        <li><a class="nav__link" data-nav="studio" href="studio.html"><span data-lang="en">Studio</span><span data-lang="zh">教学</span></a></li>
+        <li><a class="nav__link" data-nav="contact" href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-switch__btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-switch__btn" type="button" data-lang-btn="zh" aria-pressed="false">中</button>
+      </div>
+
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Take the house lights down">
+        <!-- day: house lights up -->
+        <svg class="icon-day" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" stroke-linecap="round"/>
+        </svg>
+        <!-- night: house lights down -->
+        <svg class="icon-night" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20.5 14.6A8.7 8.7 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle
+              aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="label label--accent">
+        <span data-lang="en">Photographs</span><span data-lang="zh">照片</span>
+      </p>
+      <h1>
+        <span data-lang="en">Gallery</span><span data-lang="zh">相册</span>
+      </h1>
+      <p class="lede">
+        <span data-lang="en">Click any photograph to open it. Use the arrow keys to move through the set.</span>
+        <span data-lang="zh">点击任意照片放大查看，可用左右方向键翻阅。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MASONRY GRID
+       --------------------------------------------------------------------
+       HOW TO ADD A PHOTOGRAPH
+       1. Save two sizes into assets/images/gallery/ :
+            name-1000.jpg   (grid thumbnail, long edge 1000px)
+            name-1800.jpg   (lightbox version, long edge 1800px)
+       2. Copy one <li class="masonry__item"> block and change the filenames,
+          the caption and the alt text. data-full is what the lightbox opens;
+          data-caption is both the caption and the lightbox alt text.
+       3. width/height must match the -1000 file's real pixel size, or the
+          page will jump around while the images load.
+       Order in this list = order on the page = order in the lightbox.
+       ===================================================================== -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="gallery-heading reveal">
+        <p class="label"><span data-lang="en">Selected moments</span><span data-lang="zh">舞台掠影</span></p>
+        <h2><span data-lang="en">Highlights</span><span data-lang="zh">精选照片</span></h2>
+      </div>
+      <ul class="masonry reveal">
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/pamina-solo-1800.jpg"
+                  data-caption="Pamina · Die Zauberflöte · Stafford Opera Troupe, 2026">
+            <img src="assets/images/gallery/pamina-solo-1000.jpg"
+                 width="1000" height="667" loading="lazy" decoding="async"
+                 alt="As Pamina in Die Zauberflöte, alone on stage in a pink gown.">
+            <span class="photo__caption">Pamina &middot; <cite class="work">Die Zauberflöte</cite> &middot; 2026</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/suor-angelica-1800.jpg"
+                  data-caption="Suor Angelica · Puccini · Butler Opera Center">
+            <img src="assets/images/gallery/suor-angelica-1000.jpg"
+                 width="1000" height="667" loading="lazy" decoding="async"
+                 alt="A scene from Puccini's Suor Angelica, sisters in white habits.">
+            <span class="photo__caption"><cite class="work">Suor Angelica</cite> &middot; Puccini</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/zauberfloete-dagger-1800.jpg"
+                  data-caption="Die Zauberflöte · Mozart · 2026">
+            <img src="assets/images/gallery/zauberfloete-dagger-1000.jpg"
+                 width="667" height="1000" loading="lazy" decoding="async"
+                 alt="A scene from Die Zauberflöte: Pamina with the Queen of the Night.">
+            <span class="photo__caption"><cite class="work">Die Zauberflöte</cite> &middot; Mozart</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/cendrillon-1800.jpg"
+                  data-caption="Cendrillon · Massenet · Butler Opera Center, 2025">
+            <img src="assets/images/gallery/cendrillon-1000.jpg"
+                 width="750" height="1000" loading="lazy" decoding="async"
+                 alt="A scene from Massenet's Cendrillon, spirits in tulle against a violet sky.">
+            <span class="photo__caption"><cite class="work">Cendrillon</cite> &middot; Massenet &middot; 2025</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/the-hours-1800.jpg"
+                  data-caption="The Hours · Kevin Puts · Butler School of Music, 2025">
+            <img src="assets/images/gallery/the-hours-1000.jpg"
+                 width="1000" height="667" loading="lazy" decoding="async"
+                 alt="A scene from Kevin Puts' The Hours.">
+            <span class="photo__caption"><cite class="work">The Hours</cite> &middot; Kevin Puts &middot; 2025</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/recital-green-1800.jpg"
+                  data-caption="In recital · Butler School of Music">
+            <img src="assets/images/gallery/recital-green-1000.jpg"
+                 width="1000" height="750" loading="lazy" decoding="async"
+                 alt="Singing in recital beside a grand piano, in a green velvet gown.">
+            <span class="photo__caption">
+              <span data-lang="en">In recital</span><span data-lang="zh">独唱会</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/pamina-papageno-1800.jpg"
+                  data-caption="Pamina and Papageno · Die Zauberflöte, 2026">
+            <img src="assets/images/gallery/pamina-papageno-1000.jpg"
+                 width="667" height="1000" loading="lazy" decoding="async"
+                 alt="As Pamina, on stage with Papageno in Die Zauberflöte.">
+            <span class="photo__caption">Pamina &amp; Papageno &middot; 2026</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/belle-ile-1800.jpg"
+                  data-caption="Lyrique-en-Mer Opéra Studio · Belle-Île-en-Mer, France, 2026">
+            <img src="assets/images/gallery/belle-ile-1000.jpg"
+                 width="750" height="1000" loading="lazy" decoding="async"
+                 alt="Standing against a granite wall in Belle-Île-en-Mer, Brittany.">
+            <span class="photo__caption">Belle-Île-en-Mer &middot; 2026</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/suor-angelica-prayer-1800.jpg"
+                  data-caption="Suor Angelica · Puccini · Butler Opera Center">
+            <img src="assets/images/gallery/suor-angelica-prayer-1000.jpg"
+                 width="1000" height="667" loading="lazy" decoding="async"
+                 alt="A kneeling sister in prayer, from Puccini's Suor Angelica.">
+            <span class="photo__caption"><cite class="work">Suor Angelica</cite> &middot; Puccini</span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/portrait-red-1800.jpg"
+                  data-caption="Portrait · 2024">
+            <img src="assets/images/gallery/portrait-red-1000.jpg"
+                 width="750" height="1000" loading="lazy" decoding="async"
+                 alt="Portrait in a deep red velvet gown, in daylight.">
+            <span class="photo__caption">
+              <span data-lang="en">Portrait &middot; 2024</span><span data-lang="zh">肖像 &middot; 2024</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/graduation-recital-1800.jpg"
+                  data-caption="Graduation recital · Xiamen University">
+            <img src="assets/images/gallery/graduation-recital-1000.jpg"
+                 width="651" height="1000" loading="lazy" decoding="async"
+                 alt="Singing a graduation recital beside a grand piano.">
+            <span class="photo__caption">
+              <span data-lang="en">Graduation recital &middot; Xiamen University</span>
+              <span data-lang="zh">毕业独唱音乐会 &middot; 厦门大学</span>
+            </span>
+          </button>
+        </li>
+
+        <li class="masonry__item">
+          <button class="photo" type="button"
+                  data-full="assets/images/gallery/studio-portrait-1800.jpg"
+                  data-caption="Studio portrait">
+            <img src="assets/images/gallery/studio-portrait-1000.jpg"
+                 width="667" height="1000" loading="lazy" decoding="async"
+                 alt="Studio portrait, hands framing the face.">
+            <span class="photo__caption">
+              <span data-lang="en">Studio portrait</span><span data-lang="zh">棚拍肖像</span>
+            </span>
+          </button>
+        </li>
+
+      </ul>
+
+      <section class="gallery-group" aria-labelledby="gallery-cendrillon">
+        <div class="gallery-heading reveal"><p class="label"><span data-lang="en">Opera</span><span data-lang="zh">歌剧</span></p><h2 id="gallery-cendrillon"><cite class="work">Cendrillon</cite></h2><p>Massenet &middot; Butler Opera Center &middot; 2025</p></div>
+        <ul class="masonry reveal">
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/cendrillon-court-1800.jpg" data-caption="Cendrillon · Massenet · Butler Opera Center, 2025"><img src="assets/images/gallery/cendrillon-court-1000.jpg" width="667" height="1000" loading="lazy" decoding="async" alt="A court scene from Massenet's Cendrillon."><span class="photo__caption">Court scene &middot; <cite class="work">Cendrillon</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/cendrillon-ensemble-1800.jpg" data-caption="Cendrillon ensemble · Massenet · 2025"><img src="assets/images/gallery/cendrillon-ensemble-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="The ensemble in a colorful scene from Cendrillon."><span class="photo__caption">Ensemble &middot; <cite class="work">Cendrillon</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/cendrillon-dance-1800.jpg" data-caption="Cendrillon · Massenet · Butler Opera Center, 2025"><img src="assets/images/gallery/cendrillon-dance-1000.jpg" width="750" height="1000" loading="lazy" decoding="async" alt="A dance scene from Massenet's Cendrillon."><span class="photo__caption">Dance scene &middot; <cite class="work">Cendrillon</cite></span></button></li>
+        </ul>
+      </section>
+
+      <section class="gallery-group" aria-labelledby="gallery-suor-angelica">
+        <div class="gallery-heading reveal"><p class="label"><span data-lang="en">Opera</span><span data-lang="zh">歌剧</span></p><h2 id="gallery-suor-angelica"><cite class="work">Suor Angelica</cite></h2><p>Puccini &middot; Butler Opera Center</p></div>
+        <ul class="masonry reveal">
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/suor-angelica-procession-1800.jpg" data-caption="Suor Angelica · Puccini · Butler Opera Center"><img src="assets/images/gallery/suor-angelica-procession-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="The sisters gathered onstage in Suor Angelica."><span class="photo__caption">The convent &middot; <cite class="work">Suor Angelica</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/suor-angelica-convent-1800.jpg" data-caption="Suor Angelica · Puccini · Butler Opera Center"><img src="assets/images/gallery/suor-angelica-convent-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="A dramatic convent scene from Suor Angelica."><span class="photo__caption">Convent scene &middot; <cite class="work">Suor Angelica</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/suor-angelica-kneeling-1800.jpg" data-caption="Suor Angelica · Puccini · Butler Opera Center"><img src="assets/images/gallery/suor-angelica-kneeling-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="A sister kneels in prayer during Suor Angelica."><span class="photo__caption">Prayer &middot; <cite class="work">Suor Angelica</cite></span></button></li>
+        </ul>
+      </section>
+
+      <section class="gallery-group" aria-labelledby="gallery-hours">
+        <div class="gallery-heading reveal"><p class="label"><span data-lang="en">Opera</span><span data-lang="zh">歌剧</span></p><h2 id="gallery-hours"><cite class="work">The Hours</cite></h2><p>Kevin Puts &middot; Butler School of Music &middot; 2025</p></div>
+        <ul class="masonry reveal">
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/the-hours-chorus-1800.jpg" data-caption="The Hours · Kevin Puts · 2025"><img src="assets/images/gallery/the-hours-chorus-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="The chorus in a scene from The Hours."><span class="photo__caption">Chorus &middot; <cite class="work">The Hours</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/the-hours-scene-1800.jpg" data-caption="The Hours · Kevin Puts · 2025"><img src="assets/images/gallery/the-hours-scene-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="A staged scene from Kevin Puts' The Hours."><span class="photo__caption">On stage &middot; <cite class="work">The Hours</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/the-hours-ensemble-1800.jpg" data-caption="The Hours ensemble · Kevin Puts · 2025"><img src="assets/images/gallery/the-hours-ensemble-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="The ensemble performing The Hours."><span class="photo__caption">Ensemble &middot; <cite class="work">The Hours</cite></span></button></li>
+        </ul>
+      </section>
+
+      <section class="gallery-group" aria-labelledby="gallery-zauberfloete">
+        <div class="gallery-heading reveal"><p class="label"><span data-lang="en">Opera</span><span data-lang="zh">歌剧</span></p><h2 id="gallery-zauberfloete"><cite class="work">Die Zauberflöte</cite></h2><p>Mozart &middot; Stafford Opera Troupe &middot; 2026</p></div>
+        <ul class="masonry reveal">
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/zauberfloete-cast-1800.jpg" data-caption="Die Zauberflöte · Mozart · 2026"><img src="assets/images/gallery/zauberfloete-cast-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="The cast assembled onstage in Die Zauberflöte."><span class="photo__caption">Company &middot; <cite class="work">Die Zauberflöte</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/zauberfloete-pamina-ladies-1800.jpg" data-caption="Pamina and the Three Ladies · Die Zauberflöte · 2026"><img src="assets/images/gallery/zauberfloete-pamina-ladies-1000.jpg" width="1000" height="666" loading="lazy" decoding="async" alt="Pamina with the Three Ladies in Die Zauberflöte."><span class="photo__caption">Pamina &amp; Three Ladies &middot; 2026</span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/zauberfloete-pamina-1800.jpg" data-caption="Pamina · Die Zauberflöte · 2026"><img src="assets/images/gallery/zauberfloete-pamina-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="Pamina in a dramatic scene from Die Zauberflöte."><span class="photo__caption">Pamina &middot; <cite class="work">Die Zauberflöte</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/zauberfloete-trial-1800.jpg" data-caption="Die Zauberflöte · Mozart · 2026"><img src="assets/images/gallery/zauberfloete-trial-1000.jpg" width="1000" height="667" loading="lazy" decoding="async" alt="A trial scene from Mozart's Die Zauberflöte."><span class="photo__caption">The trials &middot; <cite class="work">Die Zauberflöte</cite></span></button></li>
+          <li class="masonry__item"><button class="photo" type="button" data-full="assets/images/gallery/zauberfloete-duet-1800.jpg" data-caption="Pamina · Die Zauberflöte · 2026"><img src="assets/images/gallery/zauberfloete-duet-1000.jpg" width="667" height="1000" loading="lazy" decoding="async" alt="Pamina singing with a fellow cast member in Die Zauberflöte."><span class="photo__caption">Pamina &middot; <cite class="work">Die Zauberflöte</cite></span></button></li>
+        </ul>
+      </section>
+
+      <p class="form-note" style="margin-top: var(--space-md);">
+        <span data-lang="en">All photographs are the property of the artist. For high-resolution files, please <a href="contact.html">get in touch</a>.</span>
+        <span data-lang="zh">照片版权归艺术家所有。如需高清原图，请<a href="contact.html">联系我</a>。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LIGHTBOX — one per page, driven by the buttons above. Leave it here.
+       ===================================================================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+       aria-label="Photograph viewer" aria-hidden="true">
+
+    <button class="lightbox__btn lightbox__close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M14.5 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <button class="lightbox__btn lightbox__next" type="button" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M9.5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+    </figure>
+
+    <figcaption class="lightbox__caption">
+      <span class="lightbox__text"></span>
+      <span class="lightbox__count"></span>
+    </figcaption>
+  </div>
+</main>
+
+<!-- ==========================================================================
+     FOOTER — identical on every page.
+     ======================================================================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+
+      <div>
+        <p class="display" style="font-size: var(--step-2);">
+          <span data-lang="en">Zehan Tian</span>
+          <span data-lang="zh">田泽涵</span>
+        </p>
+        <p class="label" style="margin-top: var(--space-2xs);">
+          <span data-lang="en">Soprano</span><span data-lang="zh">女高音</span>
+        </p>
+        <div class="socials" style="margin-top: var(--space-md);">
+          <!-- Add more profiles here as you create them. -->
+          <a href="https://www.instagram.com/tiancici0519/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="mailto:zehtian19@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
+              <path d="M3.5 7l8.5 6 8.5-6" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Explore</span><span data-lang="zh">浏览</span></h3>
+        <ul>
+          <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+          <li><a href="calendar.html"><span data-lang="en">Performances</span><span data-lang="zh">演出记录</span></a></li>
+          <li><a href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+          <li><a href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Connect</span><span data-lang="zh">联系</span></h3>
+        <ul>
+          <li><a href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+          <li><a href="studio.html"><span data-lang="en">Voice studio</span><span data-lang="zh">声乐教学</span></a></li>
+          <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a></li>
+          <li><a href="mailto:zehtian19@gmail.com">zehtian19@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Zehan Tian.</span>
+      <span data-lang="en">Photographs are the property of the artist.</span>
+      <span data-lang="zh">照片版权归艺术家所有。</span>
+      <a class="to-top" href="#main">
+        <span data-lang="en">Back to top &uarr;</span><span data-lang="zh">返回顶部 &uarr;</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Camera originals — keep these out of the repo. Only the resized copies in
+# assets/images/ belong here; the full-size files are 6 MB each.
+*.CR2
+*.CR3
+*.NEF
+*.ARW
+*.RAF
+*.dng

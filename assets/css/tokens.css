@@ -1,0 +1,158 @@
+/* ============================================================================
+   tokens.css — THE ONE FILE TO EDIT WHEN YOU WANT A DIFFERENT LOOK
+   ----------------------------------------------------------------------------
+   Every colour, typeface, size and rhythm value on the site is declared here
+   as a CSS custom property. Change a value here and it changes everywhere.
+   Nothing else in the CSS hard-codes a colour or a font.
+
+   The default palette is sampled from the homepage portrait:
+     charcoal gown, dusty-rose bouquet, sage-green backlit bokeh, warm ivory.
+   ========================================================================= */
+
+:root {
+  /* ---- Typefaces --------------------------------------------------------
+     Swap these two lines to re-skin the whole site's voice.
+     Remember to also update the <link> to Google Fonts in each .html <head>
+     if you change to a font that isn't already loaded.                    */
+  --font-display: "Cormorant Garamond", "Noto Serif SC", "Songti SC",
+                  "Times New Roman", Georgia, serif;
+  --font-body: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+
+  /* ---- Type scale (fluid: min → max, scales with viewport) -------------- */
+  --step--1: clamp(0.78rem, 0.76rem + 0.10vw, 0.84rem);
+  --step-0:  clamp(0.95rem, 0.92rem + 0.16vw, 1.06rem);
+  --step-1:  clamp(1.15rem, 1.08rem + 0.34vw, 1.38rem);
+  --step-2:  clamp(1.45rem, 1.31rem + 0.68vw, 1.95rem);
+  --step-3:  clamp(1.85rem, 1.58rem + 1.32vw, 2.85rem);
+  --step-4:  clamp(2.35rem, 1.83rem + 2.55vw, 4.20rem);
+  --step-5:  clamp(2.90rem, 1.80rem + 5.40vw, 7.00rem);
+
+  --leading-tight: 1.08;
+  --leading-snug: 1.32;
+  --leading-body: 1.72;
+
+  /* Letterspacing for the small-caps "programme label" style */
+  --track-label: 0.22em;
+  --track-name: 0.03em;
+
+  /* ---- Spacing rhythm --------------------------------------------------- */
+  --space-2xs: 0.35rem;
+  --space-xs: 0.6rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --space-2xl: 8rem;
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --measure: 62ch;          /* comfortable reading width for prose */
+  --page-max: 1280px;       /* outer container */
+  --page-narrow: 880px;     /* article container */
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --nav-h: 4.6rem;
+
+  /* ---- Shape & depth ---------------------------------------------------- */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-pill: 999px;
+  --hairline: 1px;
+
+  /* ---- Motion ----------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-mid: 420ms;
+  --dur-slow: 900ms;
+}
+
+/* ============================================================================
+   DAY — "house lights up". Warm ivory recital programme.
+   ========================================================================= */
+:root,
+html[data-theme="day"] {
+  --paper:     #F7F3EB;   /* page background — warm ivory */
+  --paper-2:   #EFE8DC;   /* recessed panels, table stripes */
+  --paper-3:   #E5DCCC;   /* deeper panel / image placeholder */
+
+  --ink:       #201D1A;   /* headings, primary text */
+  --ink-2:     #4A443E;   /* body copy */
+  --ink-3:     #837a70;   /* captions, metadata */
+
+  --rule:      #DBD2C3;   /* hairlines, borders */
+  --rule-2:    #C6BAA6;   /* emphasised rules */
+
+  --accent:    #8E5C6C;   /* dusty plum-rose — from the bouquet */
+  --accent-ink:#FFFFFF;   /* text on top of --accent */
+  --accent-2:  #C79FAC;   /* soft rose — hover washes */
+  --sage:      #6F7E61;   /* backlit foliage green */
+  --gold:      #A8813F;   /* warm rim-light */
+
+  --overlay:   rgba(32, 29, 26, 0.86);   /* lightbox scrim */
+  --glass:     rgba(247, 243, 235, 0.82); /* sticky nav backdrop */
+  --shadow-sm: 0 1px 2px rgba(32, 29, 26, 0.06),
+               0 4px 14px rgba(32, 29, 26, 0.05);
+  --shadow-lg: 0 12px 40px rgba(32, 29, 26, 0.13),
+               0 2px 8px rgba(32, 29, 26, 0.07);
+
+  color-scheme: light;
+}
+
+/* ============================================================================
+   NIGHT — "house lights down". The auditorium before the curtain.
+   ========================================================================= */
+html[data-theme="night"] {
+  --paper:     #14120F;
+  --paper-2:   #1D1A16;
+  --paper-3:   #272219;
+
+  --ink:       #F3EDE2;
+  --ink-2:     #C6BCAE;
+  --ink-3:     #8C8377;
+
+  --rule:      #332D25;
+  --rule-2:    #4A4238;
+
+  --accent:    #D9A5B4;
+  --accent-ink:#1A1613;
+  --accent-2:  #8E5C6C;
+  --sage:      #9AAA88;
+  --gold:      #D8B071;
+
+  --overlay:   rgba(8, 7, 6, 0.92);
+  --glass:     rgba(20, 18, 15, 0.84);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4),
+               0 4px 14px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.55),
+               0 2px 8px rgba(0, 0, 0, 0.4);
+
+  color-scheme: dark;
+}
+
+/* Follow the operating system on first visit, until the visitor picks a side.
+   site.js writes data-theme once a choice is made, which wins over this. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --paper:     #14120F;
+    --paper-2:   #1D1A16;
+    --paper-3:   #272219;
+    --ink:       #F3EDE2;
+    --ink-2:     #C6BCAE;
+    --ink-3:     #8C8377;
+    --rule:      #332D25;
+    --rule-2:    #4A4238;
+    --accent:    #D9A5B4;
+    --accent-ink:#1A1613;
+    --accent-2:  #8E5C6C;
+    --sage:      #9AAA88;
+    --gold:      #D8B071;
+    --overlay:   rgba(8, 7, 6, 0.92);
+    --glass:     rgba(20, 18, 15, 0.84);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4),
+                 0 4px 14px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.55),
+                 0 2px 8px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
+}

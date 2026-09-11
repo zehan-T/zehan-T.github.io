@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Zehan Tian</title>
+<meta name="description" content="That page could not be found.">
+<meta name="theme-color" content="#F7F3EB">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Page not found — Zehan Tian">
+<meta property="og:description" content="That page could not be found.">
+<meta property="og:image" content="assets/images/og/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+
+<!-- Set the theme and language before first paint, so the page never flashes
+     the wrong one. Mirrors the logic in site.js. -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("zt.theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+    document.documentElement.setAttribute("data-theme", t);
+    var l = localStorage.getItem("zt.lang");
+    if (!l) l = (navigator.language || "en").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+    document.documentElement.setAttribute("lang", l);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body class="">
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到主要内容</span></a>
+
+<!-- ==========================================================================
+     HEADER
+     This block is identical on every page. If you change the navigation,
+     change it in all .html files (see README → "Editing the navigation").
+     ======================================================================= -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="index.html">
+      <span data-lang="en">Zehan&nbsp;Tian</span>
+      <span data-lang="zh">田泽涵</span>
+      <small>
+        <span data-lang="en">Soprano</span>
+        <span data-lang="zh">女高音</span>
+      </small>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-nav="home" href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+        <li><a class="nav__link" data-nav="about" href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+        <li><a class="nav__link" data-nav="media" href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+        <li><a class="nav__link" data-nav="gallery" href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        <li><a class="nav__link" data-nav="calendar" href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+        <li><a class="nav__link" data-nav="studio" href="studio.html"><span data-lang="en">Studio</span><span data-lang="zh">教学</span></a></li>
+        <li><a class="nav__link" data-nav="contact" href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-switch__btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-switch__btn" type="button" data-lang-btn="zh" aria-pressed="false">中</button>
+      </div>
+
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Take the house lights down">
+        <!-- day: house lights up -->
+        <svg class="icon-day" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" stroke-linecap="round"/>
+        </svg>
+        <!-- night: house lights down -->
+        <svg class="icon-night" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20.5 14.6A8.7 8.7 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle
+              aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section section--loose" style="padding-top: calc(var(--nav-h) + var(--space-xl));">
+    <div class="wrap wrap--narrow center-text">
+      <p class="label label--accent">404</p>
+      <h1 class="display" style="font-size: var(--step-4); margin-top: var(--space-xs);">
+        <span data-lang="en">This page missed its entrance.</span>
+        <span data-lang="zh">这一页错过了它的出场。</span>
+      </h1>
+      <p class="lede mx-auto" style="margin-top: var(--space-sm);">
+        <span data-lang="en">The link may be old, or the address slightly off. Everything is still one click away.</span>
+        <span data-lang="zh">链接可能已失效，或地址略有出入。所有内容仍在一步之内。</span>
+      </p>
+      <div class="btn-row" style="justify-content: center;">
+        <a class="btn btn--primary" href="index.html">
+          <span data-lang="en">Back to the beginning</span><span data-lang="zh">返回首页</span>
+        </a>
+        <a class="btn btn--ghost" href="calendar.html">
+          <span data-lang="en">Performances</span><span data-lang="zh">演出记录</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER — identical on every page.
+     ======================================================================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+
+      <div>
+        <p class="display" style="font-size: var(--step-2);">
+          <span data-lang="en">Zehan Tian</span>
+          <span data-lang="zh">田泽涵</span>
+        </p>
+        <p class="label" style="margin-top: var(--space-2xs);">
+          <span data-lang="en">Soprano</span><span data-lang="zh">女高音</span>
+        </p>
+        <div class="socials" style="margin-top: var(--space-md);">
+          <!-- Add more profiles here as you create them. -->
+          <a href="https://www.instagram.com/tiancici0519/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="mailto:zehtian19@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
+              <path d="M3.5 7l8.5 6 8.5-6" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Explore</span><span data-lang="zh">浏览</span></h3>
+        <ul>
+          <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+          <li><a href="calendar.html"><span data-lang="en">Performances</span><span data-lang="zh">演出记录</span></a></li>
+          <li><a href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+          <li><a href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Connect</span><span data-lang="zh">联系</span></h3>
+        <ul>
+          <li><a href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+          <li><a href="studio.html"><span data-lang="en">Voice studio</span><span data-lang="zh">声乐教学</span></a></li>
+          <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a></li>
+          <li><a href="mailto:zehtian19@gmail.com">zehtian19@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Zehan Tian.</span>
+      <span data-lang="en">Photographs are the property of the artist.</span>
+      <span data-lang="zh">照片版权归艺术家所有。</span>
+      <a class="to-top" href="#main">
+        <span data-lang="en">Back to top &uarr;</span><span data-lang="zh">返回顶部 &uarr;</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

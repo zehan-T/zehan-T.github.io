@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar — Zehan Tian, Soprano</title>
+<meta name="description" content="Upcoming performances and the complete performance history of the soprano Zehan Tian.">
+<meta name="theme-color" content="#F7F3EB">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calendar — Zehan Tian, Soprano">
+<meta property="og:description" content="Upcoming performances and the complete performance history of the soprano Zehan Tian.">
+<meta property="og:image" content="assets/images/og/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+
+<!-- Set the theme and language before first paint, so the page never flashes
+     the wrong one. Mirrors the logic in site.js. -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("zt.theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+    document.documentElement.setAttribute("data-theme", t);
+    var l = localStorage.getItem("zt.lang");
+    if (!l) l = (navigator.language || "en").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+    document.documentElement.setAttribute("lang", l);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body class="">
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到主要内容</span></a>
+
+<!-- ==========================================================================
+     HEADER
+     This block is identical on every page. If you change the navigation,
+     change it in all .html files (see README → "Editing the navigation").
+     ======================================================================= -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="index.html">
+      <span data-lang="en">Zehan&nbsp;Tian</span>
+      <span data-lang="zh">田泽涵</span>
+      <small>
+        <span data-lang="en">Soprano</span>
+        <span data-lang="zh">女高音</span>
+      </small>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-nav="home" href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+        <li><a class="nav__link" data-nav="about" href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+        <li><a class="nav__link" data-nav="media" href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+        <li><a class="nav__link" data-nav="gallery" href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        <li><a class="nav__link" data-nav="calendar" aria-current="page" href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+        <li><a class="nav__link" data-nav="studio" href="studio.html"><span data-lang="en">Studio</span><span data-lang="zh">教学</span></a></li>
+        <li><a class="nav__link" data-nav="contact" href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-switch__btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-switch__btn" type="button" data-lang-btn="zh" aria-pressed="false">中</button>
+      </div>
+
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Take the house lights down">
+        <!-- day: house lights up -->
+        <svg class="icon-day" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" stroke-linecap="round"/>
+        </svg>
+        <!-- night: house lights down -->
+        <svg class="icon-night" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20.5 14.6A8.7 8.7 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle
+              aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="label label--accent">
+        <span data-lang="en">Engagements</span><span data-lang="zh">演出</span>
+      </p>
+      <h1>
+        <span data-lang="en">Calendar</span><span data-lang="zh">日程</span>
+      </h1>
+      <p class="lede">
+        <span data-lang="en">What is coming next, followed by a complete record of past performances.</span>
+        <span data-lang="zh">近期演出，以及完整的过往演出记录。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       UPCOMING
+       --------------------------------------------------------------------
+       HOW TO ADD A DATE
+       Copy an <article class="date-row"> block and edit it. Two things matter:
+
+       * data-date="2027-04-17" — set this once the date is confirmed and the
+         row dims itself automatically the day after the performance. Leave the
+         attribute off entirely while the date is still TBA.
+       * While the date is unknown, lead with the year:
+             <span class="date-row__day date-row__day--year">2027</span>
+         Once you know the day, switch to the 17 / Apr / 2027 form:
+             <span class="date-row__day">17</span>
+             <span class="date-row__month" data-lang="en">Apr</span>
+             <span class="date-row__month" data-lang="zh">四月</span>
+             <span class="date-row__year">2027</span>
+       ===================================================================== -->
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2><span data-lang="en">Upcoming</span><span data-lang="zh">即将上演</span></h2>
+        <span class="label label--accent"><span data-lang="en">2026&ndash;27 season</span><span data-lang="zh">2026&ndash;27 演出季</span></span>
+      </div>
+
+      <div class="dates reveal">
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2027</span>
+            <span class="date-row__month" data-lang="en">TBA</span>
+            <span class="date-row__month" data-lang="zh">待定</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Die Zauberflöte</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Queen of the Night &middot; role debut</span>
+              <span data-lang="zh">夜女王 &middot; 首次饰演</span>
+            </p>
+            <p class="date-row__where">Butler Opera Center &middot; Austin, Texas</p>
+          </div>
+          <div>
+            <span class="tag tag--accent" data-lang="en">Debut</span>
+            <span class="tag tag--accent" data-lang="zh">首演</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="form-note" style="margin-top: var(--space-md);">
+        <span data-lang="en">Dates and times are confirmed closer to each production. For programme details, please <a href="contact.html">write</a>.</span>
+        <span data-lang="zh">具体日期与场次将于临近演出时公布。如需节目详情，欢迎<a href="contact.html">来信</a>。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PERFORMANCE HISTORY
+       Every staged role, cover, scene and concert, most recent first.
+       ===================================================================== -->
+  <section class="section section--tight section--panel">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2><span data-lang="en">Performance history</span><span data-lang="zh">演出记录</span></h2>
+        <span class="label"><span data-lang="en">2020 &ndash; 2026</span><span data-lang="zh">2020 &ndash; 2026</span></span>
+      </div>
+
+      <div class="dates reveal">
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2026</span>
+            <span class="date-row__month" data-lang="en">Summer</span>
+            <span class="date-row__month" data-lang="zh">夏</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">L&rsquo;Enfant et les Sortilèges</cite> &middot; <cite class="work">Requiem</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Le Feu &middot; Ravel &nbsp;|&nbsp; Mozart, <cite class="work">Requiem</cite></span>
+              <span data-lang="zh">火 &middot; 拉威尔 &nbsp;|&nbsp; 莫扎特《安魂曲》</span>
+            </p>
+            <p class="date-row__where">Lyrique-en-Mer Opéra Studio &middot; Belle-Île-en-Mer, France</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2026</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Die Zauberflöte</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Pamina</span><span data-lang="zh">帕米娜</span>
+            </p>
+            <p class="date-row__where">Stafford Opera Troupe &middot; Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2026</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Suor Angelica</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Suor Genovieffa &middot; Puccini</span>
+              <span data-lang="zh">Suor Genovieffa &middot; 普契尼</span>
+            </p>
+            <p class="date-row__where">Butler Opera Center &middot; Austin, Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2026</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Gianni Schicchi</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Nella &middot; Puccini</span>
+              <span data-lang="zh">Nella &middot; 普契尼</span>
+            </p>
+            <p class="date-row__where">Butler Opera Center &middot; Austin, Texas</p>
+          </div>
+          <div>
+            <span class="tag" data-lang="en">Lauretta cover</span>
+            <span class="tag" data-lang="zh">Lauretta 备角</span>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2025</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Cendrillon</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">First Spirit &middot; Massenet</span>
+              <span data-lang="zh">第一精灵 &middot; 马斯内</span>
+            </p>
+            <p class="date-row__where">Butler Opera Center &middot; Austin, Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2025</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3>
+              <span data-lang="en">Studio Artist Showcase</span>
+              <span data-lang="zh">驻团艺术家展演</span>
+            </h3>
+            <p class="date-row__role">
+              <span data-lang="en">Studio Artist &middot; Frasquita in <cite class="work">Carmen</cite></span>
+              <span data-lang="zh">驻团艺术家 &middot; 《卡门》选段 Frasquita</span>
+            </p>
+            <p class="date-row__where">OPERA San Antonio &middot; San Antonio, Texas</p>
+          </div>
+          <div>
+            <span class="tag" data-lang="en">Scenes</span>
+            <span class="tag" data-lang="zh">选段</span>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2025</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Le nozze di Figaro</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Barbarina &middot; Mozart</span>
+              <span data-lang="zh">芭芭丽娜 &middot; 莫扎特</span>
+            </p>
+            <p class="date-row__where">Butler School of Music &middot; Austin, Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2025</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">The Ghosts of Versailles</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Soprano, Ghost Quartet &middot; Corigliano</span>
+              <span data-lang="zh">幽灵四重唱女高音 &middot; 科里利亚诺</span>
+            </p>
+            <p class="date-row__where">Butler School of Music &middot; Austin, Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2025</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">The Hours</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Laura Brown &middot; Kevin Puts</span>
+              <span data-lang="zh">Laura Brown &middot; 凯文·普茨</span>
+            </p>
+            <p class="date-row__where">Butler School of Music &middot; Austin, Texas</p>
+          </div>
+          <div>
+            <span class="tag" data-lang="en">Scenes</span>
+            <span class="tag" data-lang="zh">选段</span>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2024</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Die Fledermaus</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Adele &middot; Johann Strauss II</span>
+              <span data-lang="zh">阿黛勒 &middot; 小约翰·施特劳斯</span>
+            </p>
+            <p class="date-row__where">Stafford Opera Troupe &middot; Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2024</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">La traviata</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Annina &middot; Verdi</span>
+              <span data-lang="zh">Annina &middot; 威尔第</span>
+            </p>
+            <p class="date-row__where">Butler School of Music &middot; Austin, Texas</p>
+          </div>
+          <div>
+            <span class="tag" data-lang="en">Cover</span>
+            <span class="tag" data-lang="zh">备角</span>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2024</span>
+            <span class="date-row__month" data-lang="en">Concert</span>
+            <span class="date-row__month" data-lang="zh">音乐会</span>
+          </div>
+          <div class="date-row__what">
+            <h3>Aria Stage</h3>
+            <p class="date-row__role">
+              <span data-lang="en">Young Artist Singer</span>
+              <span data-lang="zh">青年艺术家</span>
+            </p>
+            <p class="date-row__where">Austin Opera Festival &middot; Austin, Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2024</span>
+            <span class="date-row__month" data-lang="en">Concert</span>
+            <span class="date-row__month" data-lang="zh">音乐会</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">The Great American Song</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Collegiate Artist</span>
+              <span data-lang="zh">院校艺术家</span>
+            </p>
+            <p class="date-row__where">Stafford Opera Troupe &middot; Texas</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2023</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Suor Angelica</cite> &middot; <cite class="work">Le nozze di Figaro</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Suor Dolcina &nbsp;|&nbsp; Susanna (cover)</span>
+              <span data-lang="zh">Suor Dolcina &nbsp;|&nbsp; 苏珊娜（备角）</span>
+            </p>
+            <p class="date-row__where">Saluzzo Opera Academy &middot; Saluzzo, Italy</p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2023</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Mitridate, re di Ponto</cite> &middot; Aria Night</h3>
+            <p class="date-row__role">
+              <span data-lang="en">Sifare &middot; Mozart &nbsp;|&nbsp; Soloist</span>
+              <span data-lang="zh">Sifare &middot; 莫扎特 &nbsp;|&nbsp; 独唱</span>
+            </p>
+            <p class="date-row__where">Accademia Vocale Lorenzo Malfatti &middot; Lucca, Italy</p>
+          </div>
+          <div>
+            <span class="tag" data-lang="en">Scenes</span>
+            <span class="tag" data-lang="zh">选段</span>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2023</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Idomeneo</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Ilia &middot; Mozart</span>
+              <span data-lang="zh">Ilia &middot; 莫扎特</span>
+            </p>
+            <p class="date-row__where">Indiana University &middot; Bloomington, Indiana</p>
+          </div>
+          <div>
+            <span class="tag" data-lang="en">Scenes</span>
+            <span class="tag" data-lang="zh">选段</span>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2021</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Die lustige Witwe</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Hanna &middot; Lehár</span>
+              <span data-lang="zh">汉娜 &middot; 雷哈尔</span>
+            </p>
+            <p class="date-row__where">
+              <span data-lang="en">Xiamen University &middot; Xiamen, China</span>
+              <span data-lang="zh">厦门大学 &middot; 中国厦门</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="date-row">
+          <div class="date-row__when">
+            <span class="date-row__day date-row__day--year">2020</span>
+            <span class="date-row__month" data-lang="en">Season</span>
+            <span class="date-row__month" data-lang="zh">演出季</span>
+          </div>
+          <div class="date-row__what">
+            <h3><cite class="work">Don Giovanni</cite></h3>
+            <p class="date-row__role">
+              <span data-lang="en">Zerlina &middot; Mozart</span>
+              <span data-lang="zh">泽琳娜 &middot; 莫扎特</span>
+            </p>
+            <p class="date-row__where">
+              <span data-lang="en">Xiamen University &middot; Xiamen, China</span>
+              <span data-lang="zh">厦门大学 &middot; 中国厦门</span>
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="btn-row">
+        <a class="link-more" href="about.html">
+          <span data-lang="en">Read the full biography</span><span data-lang="zh">阅读完整简介</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER — identical on every page.
+     ======================================================================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+
+      <div>
+        <p class="display" style="font-size: var(--step-2);">
+          <span data-lang="en">Zehan Tian</span>
+          <span data-lang="zh">田泽涵</span>
+        </p>
+        <p class="label" style="margin-top: var(--space-2xs);">
+          <span data-lang="en">Soprano</span><span data-lang="zh">女高音</span>
+        </p>
+        <div class="socials" style="margin-top: var(--space-md);">
+          <!-- Add more profiles here as you create them. -->
+          <a href="https://www.instagram.com/tiancici0519/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="mailto:zehtian19@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
+              <path d="M3.5 7l8.5 6 8.5-6" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Explore</span><span data-lang="zh">浏览</span></h3>
+        <ul>
+          <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+          <li><a href="calendar.html"><span data-lang="en">Performances</span><span data-lang="zh">演出记录</span></a></li>
+          <li><a href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+          <li><a href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Connect</span><span data-lang="zh">联系</span></h3>
+        <ul>
+          <li><a href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+          <li><a href="studio.html"><span data-lang="en">Voice studio</span><span data-lang="zh">声乐教学</span></a></li>
+          <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a></li>
+          <li><a href="mailto:zehtian19@gmail.com">zehtian19@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Zehan Tian.</span>
+      <span data-lang="en">Photographs are the property of the artist.</span>
+      <span data-lang="zh">照片版权归艺术家所有。</span>
+      <a class="to-top" href="#main">
+        <span data-lang="en">Back to top &uarr;</span><span data-lang="zh">返回顶部 &uarr;</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

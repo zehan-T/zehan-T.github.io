@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Studio — Zehan Tian, Soprano</title>
+<meta name="description" content="Voice and piano lessons in Austin, Texas and online, in English or Mandarin, with the soprano Zehan Tian.">
+<meta name="theme-color" content="#F7F3EB">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Voice Studio — Zehan Tian, Soprano">
+<meta property="og:description" content="Voice and piano lessons in Austin, Texas and online, in English or Mandarin, with the soprano Zehan Tian.">
+<meta property="og:image" content="assets/images/og/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+
+<!-- Set the theme and language before first paint, so the page never flashes
+     the wrong one. Mirrors the logic in site.js. -->
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("zt.theme");
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+    document.documentElement.setAttribute("data-theme", t);
+    var l = localStorage.getItem("zt.lang");
+    if (!l) l = (navigator.language || "en").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+    document.documentElement.setAttribute("lang", l);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body class="">
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到主要内容</span></a>
+
+<!-- ==========================================================================
+     HEADER
+     This block is identical on every page. If you change the navigation,
+     change it in all .html files (see README → "Editing the navigation").
+     ======================================================================= -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="index.html">
+      <span data-lang="en">Zehan&nbsp;Tian</span>
+      <span data-lang="zh">田泽涵</span>
+      <small>
+        <span data-lang="en">Soprano</span>
+        <span data-lang="zh">女高音</span>
+      </small>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" data-nav="home" href="index.html"><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+        <li><a class="nav__link" data-nav="about" href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+        <li><a class="nav__link" data-nav="media" href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+        <li><a class="nav__link" data-nav="gallery" href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        <li><a class="nav__link" data-nav="calendar" href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+        <li><a class="nav__link" data-nav="studio" aria-current="page" href="studio.html"><span data-lang="en">Studio</span><span data-lang="zh">教学</span></a></li>
+        <li><a class="nav__link" data-nav="contact" href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header-tools">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-switch__btn" type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button class="lang-switch__btn" type="button" data-lang-btn="zh" aria-pressed="false">中</button>
+      </div>
+
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Take the house lights down">
+        <!-- day: house lights up -->
+        <svg class="icon-day" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" stroke-linecap="round"/>
+        </svg>
+        <!-- night: house lights down -->
+        <svg class="icon-night" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M20.5 14.6A8.7 8.7 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1Z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle
+              aria-controls="primary-nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="label label--accent">
+        <span data-lang="en">Teaching</span><span data-lang="zh">教学</span>
+      </p>
+      <h1>
+        <span data-lang="en">Voice Studio</span><span data-lang="zh">声乐工作室</span>
+      </h1>
+      <p class="lede">
+        <span data-lang="en">Voice and piano lessons in Austin and online &mdash; for beginners, high-school auditionees and college-level singers.</span>
+        <span data-lang="zh">在奥斯汀及线上教授声乐与钢琴 &mdash;&mdash; 面向初学者、艺考生与音乐院校在读学生。</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       IN THE STUDIO
+       ===================================================================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid-2 grid-2--wide-left">
+
+        <div class="reveal">
+          <div class="section-head">
+            <h2><span data-lang="en">In the studio</span><span data-lang="zh">教学内容</span></h2>
+            <span class="label"><span data-lang="en">01</span><span data-lang="zh">壹</span></span>
+          </div>
+
+          <div class="prose stack">
+            <p>
+              <span data-lang="en">Lessons are built around healthy, sustainable technique: breath, registration, resonance and the freedom to sing a long phrase without strain. From there we work outward into repertoire, language and the acting of a song.</span>
+              <span data-lang="zh">课程以健康、可持续的发声技术为核心：呼吸、换声区、共鸣，以及唱完一个长乐句而不感到勒紧的自由。在此基础上，再延伸到曲目、语言与歌曲的表演处理。</span>
+            </p>
+            <p>
+              <span data-lang="en">Every student already has a voice of their own &mdash; my work is to help you find it and make it reliable. Lessons combine <strong>technical clarity</strong>, <strong>musical imagination</strong> and <strong>guidance shaped around you</strong>: classical vocal technique, musicianship, diction, interpretation and audition preparation, paced to your age, experience and goals.</span>
+              <span data-lang="zh">每一位学生都已经拥有属于自己的声音 &mdash;&mdash; 我要做的，是帮你找到它，并让它稳定可靠。课程融合<strong>清晰的技术训练</strong>、<strong>音乐想象力</strong>与<strong>因人而异的指导</strong>：古典声乐技术、音乐素养、语言正音、作品处理与考试准备，并依据年龄、基础与目标调整节奏。</span>
+            </p>
+            <p>
+              <span data-lang="en">The technical work is grounded in current pedagogy rather than habit: I hold a <strong>Vocalogy certification</strong> from the Butler School of Music and completed <strong>graduate voice pedagogy coursework</strong> at the Indiana University Jacobs School of Music.</span>
+              <span data-lang="zh">技术训练建立在当代教学法之上，而非经验主义：我持有 Butler 音乐学院的 <strong>Vocalogy（嗓音学）认证</strong>，并在印第安纳大学雅各布斯音乐学院完成<strong>研究生声乐教学法课程</strong>。</span>
+            </p>
+            <p>
+              <span data-lang="en">I have taught students from early childhood through adulthood, and I welcome both complete beginners and advanced singers looking to refine technique, artistry and stage confidence. Lessons can be taken in <strong>English</strong> or <strong>Mandarin</strong>, and Italian, German and French diction for the standard repertoire is part of the work.</span>
+              <span data-lang="zh">我教过从幼童到成人的各年龄段学生，既欢迎零基础的初学者，也欢迎希望打磨技术、艺术性与舞台自信的进阶歌者。授课语言可选<strong>英文</strong>或<strong>中文</strong>，标准曲目所需的意大利语、德语、法语正音亦包含在课程内。</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="section-head">
+            <h2><span data-lang="en">Who it suits</span><span data-lang="zh">适合谁</span></h2>
+          </div>
+
+          <ul class="ledger">
+            <li class="ledger__row">
+              <div>
+                <div class="ledger__primary">
+                  <span data-lang="en">Beginners</span><span data-lang="zh">初学者</span>
+                </div>
+                <div class="ledger__sub">
+                  <span data-lang="en">First technique, first songs, no experience needed.</span>
+                  <span data-lang="zh">从零开始的发声与第一批曲目，无需基础。</span>
+                </div>
+              </div>
+              <div class="ledger__meta">
+                <span data-lang="en">Voice / Piano</span><span data-lang="zh">声乐 / 钢琴</span>
+              </div>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <div class="ledger__primary">
+                  <span data-lang="en">Audition preparation</span><span data-lang="zh">考试与面试准备</span>
+                </div>
+                <div class="ledger__sub">
+                  <span data-lang="en">Repertoire choice, cuts, and how to walk into the room.</span>
+                  <span data-lang="zh">选曲、片段处理，以及如何走进考场。</span>
+                </div>
+              </div>
+              <div class="ledger__meta">
+                <span data-lang="en">High school / College</span><span data-lang="zh">高中 / 大学</span>
+              </div>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <div class="ledger__primary">
+                  <span data-lang="en">Advanced singers</span><span data-lang="zh">进阶学生</span>
+                </div>
+                <div class="ledger__sub">
+                  <span data-lang="en">Aria work, role preparation, competition programmes.</span>
+                  <span data-lang="zh">咏叹调、角色准备、比赛节目单。</span>
+                </div>
+              </div>
+              <div class="ledger__meta">
+                <span data-lang="en">Coaching</span><span data-lang="zh">艺术指导</span>
+              </div>
+            </li>
+            <li class="ledger__row">
+              <div>
+                <div class="ledger__primary">
+                  <span data-lang="en">Online</span><span data-lang="zh">线上课</span>
+                </div>
+                <div class="ledger__sub">
+                  <span data-lang="en">Anywhere, with a decent microphone.</span>
+                  <span data-lang="zh">不限地区，建议使用外接麦克风。</span>
+                </div>
+              </div>
+              <div class="ledger__meta">
+                <span data-lang="en">Worldwide</span><span data-lang="zh">全球</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn btn--primary" href="contact.html">
+              <span data-lang="en">Enquire about lessons</span><span data-lang="zh">咨询课程</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       TEACHING EXPERIENCE
+       ===================================================================== -->
+  <section class="section section--panel">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2><span data-lang="en">Teaching experience</span><span data-lang="zh">教学经历</span></h2>
+        <span class="label"><span data-lang="en">02</span><span data-lang="zh">贰</span></span>
+      </div>
+
+      <div class="ledger reveal">
+
+        <div class="ledger__row">
+          <div>
+            <div class="ledger__primary">
+              <span data-lang="en">Voice Faculty</span><span data-lang="zh">声乐教师</span>
+            </div>
+            <div class="ledger__sub">
+              <span data-lang="en">High-school singers in an intensive operatic environment</span>
+              <span data-lang="zh">在高强度的歌剧环境中指导高中学生</span>
+            </div>
+          </div>
+          <div class="ledger__secondary">Stafford Opera Troupe</div>
+          <div class="ledger__meta">2026&ndash;</div>
+        </div>
+
+        <div class="ledger__row">
+          <div>
+            <div class="ledger__primary">
+              <span data-lang="en">Voice &amp; Piano Teacher</span><span data-lang="zh">声乐与钢琴教师</span>
+            </div>
+          </div>
+          <div class="ledger__secondary">Lulu Piano Studio &middot; Austin, Texas</div>
+          <div class="ledger__meta">2024&ndash;</div>
+        </div>
+
+        <div class="ledger__row">
+          <div>
+            <div class="ledger__primary">
+              <span data-lang="en">Substitute Instructor</span><span data-lang="zh">代课教师</span>
+            </div>
+          </div>
+          <div class="ledger__secondary">Northwest Music School &middot; Velocity Music Academy</div>
+          <div class="ledger__meta">2024&ndash;2025</div>
+        </div>
+
+        <div class="ledger__row">
+          <div>
+            <div class="ledger__primary">
+              <span data-lang="en">Vocology training</span><span data-lang="zh">嗓音学（Vocology）训练</span>
+            </div>
+          </div>
+          <div class="ledger__secondary">Butler School of Music, UT Austin</div>
+          <div class="ledger__meta">2025</div>
+        </div>
+
+        <div class="ledger__row">
+          <div>
+            <div class="ledger__primary">
+              <span data-lang="en">Graduate coursework in voice pedagogy</span>
+              <span data-lang="zh">研究生声乐教学法课程</span>
+            </div>
+          </div>
+          <div class="ledger__secondary">Indiana University Jacobs School of Music</div>
+          <div class="ledger__meta">2023</div>
+        </div>
+
+        <div class="ledger__row">
+          <div>
+            <div class="ledger__primary">
+              <span data-lang="en">Voice Teacher</span><span data-lang="zh">声乐教师</span>
+            </div>
+          </div>
+          <div class="ledger__secondary">
+            <span data-lang="en">Jingyanguzheng Art School &middot; Fujian, China</span>
+            <span data-lang="zh">京研古筝艺术学校 &middot; 中国福建</span>
+          </div>
+          <div class="ledger__meta">2019&ndash;2022</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PRACTICALITIES
+       Rates are left as "on enquiry" — put your own numbers in, or delete
+       the row if you would rather quote privately.
+       ===================================================================== -->
+  <section class="section">
+    <div class="wrap wrap--narrow reveal">
+      <div class="section-head">
+        <h2><span data-lang="en">Practicalities</span><span data-lang="zh">课程安排</span></h2>
+        <span class="label"><span data-lang="en">03</span><span data-lang="zh">叁</span></span>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <span class="k"><span data-lang="en">Length</span><span data-lang="zh">时长</span></span>
+          <span class="v">
+            <span data-lang="en">30 / 45 / 60 minutes</span>
+            <span data-lang="zh">30 / 45 / 60 分钟</span>
+          </span>
+        </li>
+        <li>
+          <span class="k"><span data-lang="en">Where</span><span data-lang="zh">地点</span></span>
+          <span class="v">
+            <span data-lang="en">Austin, Texas &middot; or online</span>
+            <span data-lang="zh">德州奥斯汀 &middot; 或线上</span>
+          </span>
+        </li>
+        <li>
+          <span class="k"><span data-lang="en">Ages</span><span data-lang="zh">年龄</span></span>
+          <span class="v">
+            <span data-lang="en">Early childhood to adult</span>
+            <span data-lang="zh">幼童至成人</span>
+          </span>
+        </li>
+        <li>
+          <span class="k"><span data-lang="en">Languages</span><span data-lang="zh">授课语言</span></span>
+          <span class="v">
+            <span data-lang="en">English &middot; Mandarin</span>
+            <span data-lang="zh">英文 &middot; 中文</span>
+          </span>
+        </li>
+        <li>
+          <span class="k"><span data-lang="en">Rates</span><span data-lang="zh">费用</span></span>
+          <span class="v">
+            <span data-lang="en">On enquiry</span>
+            <span data-lang="zh">来函咨询</span>
+          </span>
+        </li>
+      </ul>
+
+      <div class="btn-row">
+        <a class="btn btn--primary" href="contact.html">
+          <span data-lang="en">Book a trial lesson</span><span data-lang="zh">预约试课</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER — identical on every page.
+     ======================================================================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+
+      <div>
+        <p class="display" style="font-size: var(--step-2);">
+          <span data-lang="en">Zehan Tian</span>
+          <span data-lang="zh">田泽涵</span>
+        </p>
+        <p class="label" style="margin-top: var(--space-2xs);">
+          <span data-lang="en">Soprano</span><span data-lang="zh">女高音</span>
+        </p>
+        <div class="socials" style="margin-top: var(--space-md);">
+          <!-- Add more profiles here as you create them. -->
+          <a href="https://www.instagram.com/tiancici0519/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="mailto:zehtian19@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2.5" y="5" width="19" height="14" rx="2.5"/>
+              <path d="M3.5 7l8.5 6 8.5-6" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Explore</span><span data-lang="zh">浏览</span></h3>
+        <ul>
+          <li><a href="about.html"><span data-lang="en">About</span><span data-lang="zh">关于</span></a></li>
+          <li><a href="calendar.html"><span data-lang="en">Performances</span><span data-lang="zh">演出记录</span></a></li>
+          <li><a href="media.html"><span data-lang="en">Media</span><span data-lang="zh">影音</span></a></li>
+          <li><a href="gallery.html"><span data-lang="en">Gallery</span><span data-lang="zh">相册</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3><span data-lang="en">Connect</span><span data-lang="zh">联系</span></h3>
+        <ul>
+          <li><a href="calendar.html"><span data-lang="en">Calendar</span><span data-lang="zh">日程</span></a></li>
+          <li><a href="studio.html"><span data-lang="en">Voice studio</span><span data-lang="zh">声乐教学</span></a></li>
+          <li><a href="contact.html"><span data-lang="en">Contact</span><span data-lang="zh">联系方式</span></a></li>
+          <li><a href="mailto:zehtian19@gmail.com">zehtian19@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__base">
+      <span>&copy; <span data-year>2026</span> Zehan Tian.</span>
+      <span data-lang="en">Photographs are the property of the artist.</span>
+      <span data-lang="zh">照片版权归艺术家所有。</span>
+      <a class="to-top" href="#main">
+        <span data-lang="en">Back to top &uarr;</span><span data-lang="zh">返回顶部 &uarr;</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

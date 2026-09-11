@@ -1,0 +1,1267 @@
+/* ============================================================================
+   components.css — every visible piece of furniture on the site.
+   Ordered roughly the way you meet them: nav → hero → content → footer.
+   ========================================================================= */
+
+/* ============================================================================
+   1. SITE HEADER / NAVIGATION
+   ========================================================================= */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background-color var(--dur-mid) var(--ease-out),
+              border-color var(--dur-mid) var(--ease-out),
+              backdrop-filter var(--dur-mid) var(--ease-out);
+  border-bottom: var(--hairline) solid transparent;
+}
+
+/* site.js adds .is-stuck once the page scrolls past the hero lip. */
+.site-header.is-stuck {
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--rule);
+}
+
+.site-header__inner {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Wordmark ---------------------------------------------------------------- */
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.wordmark:hover { color: var(--accent); }
+.wordmark small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  letter-spacing: var(--track-label);
+  color: var(--ink-3);
+  margin-top: 0.35em;
+}
+
+/* Primary nav ------------------------------------------------------------- */
+.nav { margin-left: auto; }
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 1.8vw, 2rem);
+}
+
+.nav__link {
+  position: relative;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-2);
+  text-decoration: none;
+  padding-block: 0.4rem;
+  white-space: nowrap;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: var(--hairline);
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-mid) var(--ease-out);
+}
+.nav__link:hover { color: var(--ink); }
+.nav__link:hover::after { transform: scaleX(1); }
+
+/* Mark the current page — set aria-current="page" in the HTML. */
+.nav__link[aria-current="page"] { color: var(--ink); }
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+  background: var(--ink-3);
+}
+
+/* Header utilities: language + house lights + mobile toggle --------------- */
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-left: var(--space-sm);
+}
+
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: var(--hairline) solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              background-color var(--dur-fast) var(--ease-out);
+}
+.icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.icon-btn svg { width: 1.05rem; height: 1.05rem; }
+
+/* Language switch — a tiny two-state pill: EN | 中 */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  border: var(--hairline) solid var(--rule);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.lang-switch__btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  padding: 0.42rem 0.62rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+.lang-switch__btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.lang-switch__btn:hover:not([aria-pressed="true"]) { color: var(--ink); }
+
+/* The two house-lights glyphs swap depending on the active theme. */
+.icon-btn .icon-night { display: none; }
+html[data-theme="night"] .icon-btn .icon-day { display: none; }
+html[data-theme="night"] .icon-btn .icon-night { display: block; }
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .icon-btn .icon-day { display: none; }
+  html:not([data-theme]) .icon-btn .icon-night { display: block; }
+}
+
+/* Hamburger -------------------------------------------------------------- */
+.nav-toggle { display: none; }
+
+@media (max-width: 1000px) {
+  .nav-toggle { display: grid; }
+
+  .nav {
+    position: fixed;
+    inset: var(--nav-h) 0 auto 0;
+    background: var(--paper);
+    border-bottom: var(--hairline) solid var(--rule);
+    box-shadow: var(--shadow-lg);
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--dur-mid) var(--ease-in-out);
+  }
+  .nav.is-open { max-height: min(78vh, 40rem); overflow-y: auto; }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-xs) var(--gutter) var(--space-md);
+  }
+  .nav__link {
+    display: block;
+    padding-block: 0.95rem;
+    border-bottom: var(--hairline) solid var(--rule);
+    font-size: var(--step-0);
+    letter-spacing: 0.12em;
+  }
+  .nav__link::after { display: none; }
+  .nav__link[aria-current="page"] { color: var(--accent); }
+}
+
+/* ============================================================================
+   2. HERO — the cover photograph, full bleed
+   ----------------------------------------------------------------------------
+   The homepage portrait is a wide studio shot with the singer on the right and
+   a large sweep of empty slate-blue on the left. It was clearly framed with
+   copy space in mind, so the photograph runs full bleed and the type sits in
+   that empty half.
+
+   That left area is a mid-tone slate (#667C93) — too dark for ink, too light
+   for white. Rather than fight it, the hero is always treated as a lit stage:
+   a dark scrim over the photograph and light type on top, in BOTH the day and
+   night themes. The three locals below are the hero's own palette, so nothing
+   here depends on which theme is active.
+   ========================================================================= */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  --hero-ink:    #F7F2EB;
+  --hero-ink-2:  #D5CCC1;
+  --hero-accent: #E8BAC6;
+  --hero-dark:   14, 18, 24;   /* rgb triplet for the scrim */
+}
+
+/* --- the photograph ----------------------------------------------------- */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+}
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* keep her face in frame as the box changes shape */
+  object-position: 64% 28%;
+  animation: hero-settle 1.8s var(--ease-out) both;
+}
+@keyframes hero-settle {
+  from { opacity: 0; transform: scale(1.04); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* --- the scrim ----------------------------------------------------------
+   Narrow screens read bottom-up (type sits under the face); wide screens
+   read left-to-right (type sits in the empty half). */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgba(var(--hero-dark), 0.90) 0%,
+    rgba(var(--hero-dark), 0.70) 34%,
+    rgba(var(--hero-dark), 0.26) 66%,
+    rgba(var(--hero-dark), 0.10) 100%);
+}
+
+/* On narrow screens the copy sits at the bottom. The hero is kept tall enough
+   that the type clears her face rather than landing across it — the portrait
+   crop puts the face at roughly 38% of the frame. */
+.hero__inner {
+  position: relative;
+  display: grid;
+  align-content: end;
+  min-height: min(96vh, 860px);
+  padding-top: calc(var(--nav-h) + var(--space-lg));
+  padding-bottom: var(--space-lg);
+}
+
+@media (min-width: 900px) {
+  .hero::after {
+    background: linear-gradient(
+      100deg,
+      rgba(var(--hero-dark), 0.92) 0%,
+      rgba(var(--hero-dark), 0.80) 28%,
+      rgba(var(--hero-dark), 0.46) 50%,
+      rgba(var(--hero-dark), 0.12) 72%,
+      rgba(var(--hero-dark), 0.00) 90%);
+  }
+  .hero__inner {
+    align-content: center;
+    min-height: min(88vh, 880px);
+    padding-bottom: var(--space-xl);
+  }
+  .hero__copy { max-width: min(46%, 34rem); }
+}
+
+/* --- hero type ----------------------------------------------------------- */
+.hero .label--accent { color: var(--hero-accent); }
+
+.hero__name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--step-5);
+  line-height: 0.94;
+  color: var(--hero-ink);
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+.hero__name span { display: block; }
+.hero__name .given { font-style: italic; }
+.hero__name .family {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+/* The wide tracking here is the point, but at 0.42em this line is ~400px of
+   unbreakable text — on a narrow phone that would push the grid wider than the
+   viewport. Both size and tracking are fluid so it always fits. */
+.hero__voice {
+  margin-top: var(--space-sm);
+  font-size: clamp(0.7rem, 2.4vw, var(--step-0));
+  text-transform: uppercase;
+  letter-spacing: clamp(0.14em, 1.1vw, 0.42em);
+  color: var(--hero-accent);
+}
+
+.hero__epigraph {
+  margin-top: var(--space-md);
+  max-width: 40ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-1);
+  line-height: var(--leading-snug);
+  color: var(--hero-ink-2);
+}
+
+/* --- the breath line ----------------------------------------------------
+   A single stroked wave that draws itself once on load: the site's small
+   nod to the voice. Decorative, hidden from assistive tech. */
+.breath {
+  margin-top: var(--space-md);
+  width: min(100%, 26rem);
+  height: 2.2rem;
+  overflow: visible;
+}
+.breath path {
+  fill: none;
+  stroke: var(--hero-accent);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.85;
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: breath-draw 2.6s var(--ease-out) 0.35s forwards;
+}
+@keyframes breath-draw { to { stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .breath path { stroke-dashoffset: 0; animation: none; }
+  .hero__media img { animation: none; }
+}
+
+/* --- buttons on the dark hero -------------------------------------------
+   The page buttons are ink-on-paper, which disappears here. */
+.hero .btn--primary {
+  background: var(--hero-accent);
+  border-color: var(--hero-accent);
+  color: #1A1613;
+}
+.hero .btn--primary:hover {
+  background: var(--hero-ink);
+  border-color: var(--hero-ink);
+  color: #1A1613;
+}
+.hero .btn--ghost {
+  border-color: rgba(247, 242, 235, 0.45);
+  color: var(--hero-ink);
+}
+.hero .btn--ghost:hover {
+  background: var(--hero-ink);
+  border-color: var(--hero-ink);
+  color: #14120F;
+}
+
+.hero__credit {
+  margin-top: var(--space-md);
+  font-size: var(--step--1);
+  color: rgba(247, 242, 235, 0.62);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================================
+   2b. HEADER OVER THE HERO
+   ----------------------------------------------------------------------------
+   On the homepage the navigation floats over a dark photograph until the page
+   scrolls, so its ink-coloured type would vanish. <body class="page-home">
+   flips it to light for exactly that state.
+   ========================================================================= */
+.page-home .site-header:not(.is-stuck) .wordmark { color: #F7F2EB; }
+.page-home .site-header:not(.is-stuck) .wordmark small { color: rgba(247, 242, 235, 0.68); }
+
+.page-home .site-header:not(.is-stuck) .icon-btn,
+.page-home .site-header:not(.is-stuck) .lang-switch {
+  border-color: rgba(247, 242, 235, 0.38);
+  color: #F7F2EB;
+}
+.page-home .site-header:not(.is-stuck) .lang-switch__btn { color: rgba(247, 242, 235, 0.68); }
+.page-home .site-header:not(.is-stuck) .lang-switch__btn[aria-pressed="true"] {
+  background: #F7F2EB;
+  color: #14120F;
+}
+.page-home .site-header:not(.is-stuck) .icon-btn:hover {
+  border-color: #F7F2EB;
+  color: #F7F2EB;
+  background: rgba(247, 242, 235, 0.14);
+}
+
+/* Only above the mobile breakpoint — below it these links live in the paper
+   drawer, where light type would be invisible. */
+@media (min-width: 1001px) {
+  .page-home .site-header:not(.is-stuck) .nav__link { color: rgba(247, 242, 235, 0.82); }
+  .page-home .site-header:not(.is-stuck) .nav__link:hover { color: #FFF; }
+  .page-home .site-header:not(.is-stuck) .nav__link[aria-current="page"] { color: #FFF; }
+  .page-home .site-header:not(.is-stuck) .nav__link[aria-current="page"]::after {
+    background: rgba(247, 242, 235, 0.8);
+  }
+}
+
+/* ============================================================================
+   3. BUTTONS
+   ========================================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.82rem 1.6rem;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  text-decoration: none;
+  border: var(--hairline) solid var(--ink);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.btn--primary:hover {
+  background: color-mix(in srgb, var(--accent) 82%, var(--ink));
+  border-color: transparent;
+  color: var(--accent-ink);
+}
+.btn--ghost { border-color: var(--rule-2); color: var(--ink-2); }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+/* A quiet text link with a moving arrow. */
+.link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.17em;
+  text-decoration: none;
+  color: var(--accent);
+}
+.link-more::after {
+  content: "→";
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.link-more:hover::after { transform: translateX(0.3rem); }
+
+/* ============================================================================
+   4. "NOW" STRIP — what she is singing next, above everything else.
+   ========================================================================= */
+.now {
+  border-block: var(--hairline) solid var(--rule);
+  background: var(--paper-2);
+}
+.now__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-md);
+  padding-block: var(--space-sm);
+}
+.now__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--accent);
+}
+/* A slow pulsing dot — "on sale now" energy, kept very quiet. */
+.now__dot {
+  width: 0.45rem; height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: now-pulse 2.8s var(--ease-in-out) infinite;
+}
+@keyframes now-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.8); }
+}
+.now__text { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); }
+.now__meta { font-size: var(--step--1); color: var(--ink-3); letter-spacing: 0.06em; }
+.now__inner .link-more { margin-left: auto; }
+
+/* ============================================================================
+   5. THE PROGRAMME LEDGER — repertoire, awards, education, credits.
+   ----------------------------------------------------------------------------
+   A ruled two- or three-column list set like the back page of a recital
+   programme, with leader dots between the entry and its year.
+   ========================================================================= */
+.ledger { border-top: var(--hairline) solid var(--rule); }
+
+.ledger__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xs) var(--space-sm);
+  align-items: baseline;
+  padding-block: var(--space-sm);
+  border-bottom: var(--hairline) solid var(--rule);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+.ledger__row:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+
+@media (min-width: 700px) {
+  .ledger__row {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) auto;
+  }
+}
+
+.ledger__primary {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--ink);
+  line-height: var(--leading-snug);
+}
+/* A quieter second line under the primary entry — the work and its composer. */
+.ledger__sub {
+  margin-top: 0.15rem;
+  font-size: var(--step-0);
+  color: var(--ink-2);
+  line-height: var(--leading-snug);
+}
+
+.ledger__secondary {
+  font-size: var(--step-0);
+  color: var(--ink-2);
+}
+.ledger__meta {
+  font-size: var(--step--1);
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* A small marker for covers / roles studied rather than performed. */
+.tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.16rem 0.5rem;
+  border: var(--hairline) solid var(--rule-2);
+  border-radius: var(--radius-pill);
+  color: var(--ink-3);
+  vertical-align: 0.16em;
+  margin-left: 0.45rem;
+  font-style: normal;
+}
+.tag--accent { border-color: var(--accent); color: var(--accent); }
+
+/* ============================================================================
+   6. CREDIT COLUMNS — directors / teachers / conductors / coaches
+   ========================================================================= */
+.credits {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px) { .credits { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 940px) { .credits { grid-template-columns: repeat(4, 1fr); } }
+
+.credits__col { border-top: var(--hairline) solid var(--rule-2); padding-top: var(--space-xs); }
+.credits__col h3 {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--ink-3);
+  margin-bottom: var(--space-xs);
+}
+.credits__col li {
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  color: var(--ink);
+  padding-block: 0.28rem;
+}
+.credits__col li em {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-left: 0.35rem;
+}
+
+/* ============================================================================
+   7. CALENDAR — playbill dates with oversized day numerals
+   ========================================================================= */
+.dates { border-top: var(--hairline) solid var(--rule); }
+
+.date-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-sm) var(--space-md);
+  align-items: start;
+  padding-block: var(--space-md);
+  border-bottom: var(--hairline) solid var(--rule);
+}
+@media (min-width: 820px) {
+  .date-row { grid-template-columns: 6rem 1fr auto; align-items: center; }
+}
+
+.date-row__when { text-align: center; line-height: 1; }
+.date-row__day {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  color: var(--ink);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+/* When a date isn't fixed yet, the year becomes the headline instead of the
+   day. Four digits need a smaller size to sit in the same column. */
+.date-row__day--year {
+  font-size: var(--step-2);
+  letter-spacing: 0.005em;
+}
+
+.date-row__month {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+.date-row__year {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.date-row__what h3 { font-size: var(--step-1); }
+.date-row__role { color: var(--accent); font-size: var(--step-0); }
+.date-row__where {
+  margin-top: var(--space-2xs);
+  font-size: var(--step--1);
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+}
+
+/* site.js stamps .is-past on any date that has already happened. */
+.date-row.is-past { opacity: 0.52; }
+.date-row.is-past .date-row__month { color: var(--ink-3); }
+.date-row.is-past .date-row__role { color: var(--ink-3); }
+
+/* ============================================================================
+   8. GALLERY — CSS-columns masonry, no library
+   ========================================================================= */
+.masonry {
+  columns: 1;
+  column-gap: var(--space-sm);
+}
+@media (min-width: 620px) { .masonry { columns: 2; } }
+@media (min-width: 1040px) { .masonry { columns: 3; } }
+
+.masonry__item {
+  break-inside: avoid;
+  margin-bottom: var(--space-sm);
+}
+
+.gallery-heading {
+  margin-bottom: var(--space-md);
+  max-width: 44rem;
+}
+.gallery-heading .label { margin-bottom: var(--space-2xs); }
+.gallery-heading h2 { font-size: var(--step-3); }
+.gallery-heading > p:last-child {
+  margin-top: var(--space-2xs);
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+.gallery-group {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: var(--hairline) solid var(--rule);
+}
+
+.photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: var(--paper-3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  line-height: 0;
+}
+.photo img {
+  width: 100%;
+  transition: transform var(--dur-slow) var(--ease-out),
+              filter var(--dur-mid) var(--ease-out);
+}
+.photo:hover img { transform: scale(1.035); filter: saturate(1.06); }
+
+/* Caption slides up on hover / focus. */
+.photo__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.6rem 1rem 0.9rem;
+  background: linear-gradient(to top, rgba(20, 18, 15, 0.78), transparent);
+  color: #fff;
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity var(--dur-mid) var(--ease-out),
+              transform var(--dur-mid) var(--ease-out);
+}
+.photo:hover .photo__caption,
+.photo:focus-visible .photo__caption { opacity: 1; transform: translateY(0); }
+
+/* ============================================================================
+   9. LIGHTBOX
+   ========================================================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: var(--overlay);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-mid) var(--ease-out),
+              visibility var(--dur-mid) var(--ease-out);
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+
+.lightbox__figure {
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: calc(100vh - 10rem);
+  width: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+}
+.lightbox__caption {
+  margin-top: var(--space-sm);
+  color: #EDE6DA;
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+.lightbox__count {
+  display: block;
+  margin-top: 0.35rem;
+  color: #9C948A;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.14em;
+}
+
+.lightbox__btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 3rem; height: 3rem;
+  border: var(--hairline) solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-pill);
+  background: rgba(20, 18, 15, 0.5);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+.lightbox__btn:hover {
+  background: rgba(20, 18, 15, 0.85);
+  border-color: #fff;
+}
+.lightbox__btn svg { width: 1.1rem; height: 1.1rem; }
+.lightbox__close { top: clamp(1rem, 3vw, 2rem); right: clamp(1rem, 3vw, 2rem); }
+.lightbox__prev { left: clamp(0.5rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); }
+.lightbox__next { right: clamp(0.5rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); }
+
+body.is-locked { overflow: hidden; }
+
+/* ============================================================================
+   10. MEDIA — audio rows with a synthetic waveform, and video cards
+   ========================================================================= */
+.track {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-sm) var(--space-md);
+  align-items: center;
+  padding-block: var(--space-md);
+  border-bottom: var(--hairline) solid var(--rule);
+}
+
+.track__play {
+  display: grid;
+  place-items: center;
+  width: 3.2rem; height: 3.2rem;
+  border-radius: 50%;
+  border: var(--hairline) solid var(--rule-2);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  flex: none;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+.track__play:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.track__play svg { width: 0.9rem; height: 0.9rem; }
+.track__play .icon-pause { display: none; }
+.track.is-playing .track__play { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.track.is-playing .track__play .icon-play { display: none; }
+.track.is-playing .track__play .icon-pause { display: block; }
+
+.track__body { min-width: 0; }
+.track__title { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); }
+.track__meta { font-size: var(--step--1); color: var(--ink-3); letter-spacing: 0.05em; }
+
+/* The waveform: 64 bars whose heights come from a fixed pattern in site.js.
+   It is a progress bar wearing a costume — it is not real audio analysis. */
+.wave {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 2.4rem;
+  margin-top: var(--space-xs);
+  cursor: pointer;
+}
+.wave__bar {
+  flex: 1;
+  min-width: 1px;
+  background: var(--rule-2);
+  border-radius: 1px;
+  transition: background-color 120ms linear;
+}
+.wave__bar.is-played { background: var(--accent); }
+
+.track__time {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.3rem;
+}
+
+/* Video ------------------------------------------------------------------- */
+.video-card { display: block; }
+.video-card__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--paper-3);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: var(--hairline) solid var(--rule);
+}
+.video-card__frame iframe,
+.video-card__frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* --- Facade player -------------------------------------------------------
+   A YouTube embed drags in ~1.5 MB of Google script before anyone presses
+   play. Instead each video starts as a still frame with our own play button;
+   site.js swaps in the real <iframe> (autoplaying, inline) on the first
+   click. The page stays fast, the styling stays ours, and playback still
+   happens here rather than on youtube.com.
+   ------------------------------------------------------------------------ */
+.video-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  padding: 0;
+  border: 0;
+  background: #0E1218;
+  cursor: pointer;
+  display: block;
+  line-height: 0;
+}
+.video-facade img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out),
+              filter var(--dur-mid) var(--ease-out);
+}
+.video-facade:hover img { transform: scale(1.03); filter: brightness(0.92); }
+
+.video-facade__play {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: clamp(3.4rem, 7vw, 4.6rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: var(--hairline) solid rgba(255, 255, 255, 0.7);
+  background: rgba(14, 18, 24, 0.48);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.video-facade__play svg {
+  width: 34%; height: 34%;
+  /* nudge the triangle so it looks centred in the circle */
+  margin-left: 8%;
+}
+.video-facade:hover .video-facade__play,
+.video-facade:focus-visible .video-facade__play {
+  background: var(--accent);
+  border-color: transparent;
+  color: var(--accent-ink);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+/* Runtime badge in the corner of the still. */
+.video-facade__time {
+  position: absolute;
+  right: 0.7rem; bottom: 0.7rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(14, 18, 24, 0.72);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+.video-card__title { margin-top: var(--space-xs); font-family: var(--font-display); font-size: var(--step-1); color: var(--ink); }
+.video-card__meta { font-size: var(--step--1); color: var(--ink-3); letter-spacing: 0.05em; }
+
+/* ============================================================================
+   11. EMPTY SLOT — an honest, styled placeholder for assets not yet added.
+   Delete these blocks from the HTML as you fill the folders.
+   ========================================================================= */
+.slot {
+  display: grid;
+  place-items: center;
+  gap: var(--space-xs);
+  min-height: 12rem;
+  padding: var(--space-md);
+  text-align: center;
+  border: var(--hairline) dashed var(--rule-2);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--paper-2) 60%, transparent);
+  color: var(--ink-3);
+}
+.slot__icon { width: 1.6rem; height: 1.6rem; color: var(--rule-2); }
+.slot__title { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink-2); }
+.slot code {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  background: var(--paper-3);
+  padding: 0.15rem 0.42rem;
+  border-radius: var(--radius-sm);
+  color: var(--ink-2);
+}
+
+/* ============================================================================
+   12. PULL QUOTE — press, or a line she wants to lead with
+   ========================================================================= */
+.pullquote {
+  position: relative;
+  padding-left: clamp(2rem, 5vw, 3.6rem);
+  max-width: 46ch;
+}
+.pullquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0; top: -0.18em;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 8vw, 5.6rem);
+  line-height: 1;
+  color: var(--accent-2);
+}
+.pullquote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-2);
+  line-height: var(--leading-snug);
+  color: var(--ink);
+}
+.pullquote footer {
+  margin-top: var(--space-sm);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--ink-3);
+}
+
+/* ============================================================================
+   13. FACT LIST — "at a glance" figures
+   ========================================================================= */
+.facts {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+.facts__item { border-top: var(--hairline) solid var(--rule-2); padding-top: var(--space-xs); }
+.facts__figure {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  color: var(--ink);
+  line-height: 1;
+  /* Cormorant ships old-style figures by default, which makes "11" read as
+     Roman numerals. Force lining figures wherever a number is the headline. */
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.facts__note {
+  display: block;
+  margin-top: var(--space-2xs);
+  font-size: var(--step--1);
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================================
+   14. PHOTO STRIP — a horizontal scroller teasing the gallery
+   ========================================================================= */
+.strip {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-xs);
+  scrollbar-width: thin;
+}
+.strip::-webkit-scrollbar { height: 5px; }
+.strip::-webkit-scrollbar-thumb { background: var(--rule-2); border-radius: var(--radius-pill); }
+.strip__item {
+  flex: 0 0 auto;
+  width: clamp(11rem, 26vw, 17rem);
+  scroll-snap-align: start;
+}
+.strip__item img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--paper-3);
+  transition: filter var(--dur-mid) var(--ease-out);
+}
+.strip__item:hover img { filter: brightness(1.04) saturate(1.05); }
+
+/* ============================================================================
+   15. FORMS
+   ========================================================================= */
+.field { display: grid; gap: var(--space-2xs); }
+.field label {
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  background: var(--paper);
+  border: var(--hairline) solid var(--rule-2);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.field input:focus,
+.field textarea:focus { outline: none; border-color: var(--accent); }
+.field textarea { resize: vertical; min-height: 8rem; }
+
+.form-note { font-size: var(--step--1); color: var(--ink-3); }
+
+/* Contact detail rows */
+.contact-list { border-top: var(--hairline) solid var(--rule); }
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-sm);
+  align-items: baseline;
+  padding-block: var(--space-sm);
+  border-bottom: var(--hairline) solid var(--rule);
+}
+.contact-list dt,
+.contact-list .k {
+  flex: 0 0 7rem;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+.contact-list .v {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--ink);
+  /* Email addresses and phone numbers have to be readable at a glance, and the
+     display serif's old-style figures turn "19" into something like "ı9". */
+  font-variant-numeric: lining-nums;
+}
+.contact-list .v a { text-decoration: none; }
+.contact-list .v a:hover { text-decoration: underline; }
+
+/* ============================================================================
+   16. SOCIAL ICONS
+   ========================================================================= */
+.socials { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 2.6rem; height: 2.6rem;
+  border: var(--hairline) solid var(--rule);
+  border-radius: var(--radius-pill);
+  color: var(--ink-2);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.socials a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+.socials svg { width: 1.05rem; height: 1.05rem; }
+
+/* ============================================================================
+   17. FOOTER
+   ========================================================================= */
+.site-footer {
+  margin-top: var(--space-xl);
+  border-top: var(--hairline) solid var(--rule);
+  background: var(--paper-2);
+  padding-block: var(--space-lg) var(--space-md);
+}
+.site-footer__grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .site-footer__grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+.site-footer h3 {
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: var(--track-label);
+  color: var(--ink-3);
+  margin-bottom: var(--space-xs);
+}
+.site-footer li { padding-block: 0.22rem; }
+.site-footer a { text-decoration: none; font-size: var(--step-0); }
+.site-footer a:hover { text-decoration: underline; }
+
+.site-footer__base {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-sm);
+  border-top: var(--hairline) solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+  align-items: center;
+  font-size: var(--step--1);
+  color: var(--ink-3);
+}
+.site-footer__base .to-top { margin-left: auto; text-decoration: none; }
+
+/* ============================================================================
+   18. SCROLL REVEAL — opt in by adding .reveal to any element
+   ========================================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.4rem);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Stagger children of a revealed group. */
+.reveal-group > * { transition-delay: calc(var(--i, 0) * 70ms); }
+
+/* If JS never runs, nothing should stay invisible. */
+.no-js .reveal { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ============================================================================
+   19. PAGE HEADER for interior pages
+   ========================================================================= */
+.page-head {
+  padding-top: calc(var(--nav-h) + var(--space-lg));
+  padding-bottom: var(--space-md);
+  border-bottom: var(--hairline) solid var(--rule);
+}
+.page-head h1 { font-size: var(--step-4); margin-top: var(--space-2xs); }
+.page-head .lede { margin-top: var(--space-sm); max-width: 48ch; }
+
+/* ============================================================================
+   20. PRINT — a clean CV-like sheet
+   ========================================================================= */
+@media print {
+  .site-header, .site-footer, .lightbox, .btn-row, .breath,
+  .nav-toggle, .header-tools, .strip { display: none !important; }
+  body { background: #fff; color: #000; }
+  .hero { padding-top: 0; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  a { text-decoration: none; color: #000; }
+  .ledger__row, .date-row { page-break-inside: avoid; }
+}
