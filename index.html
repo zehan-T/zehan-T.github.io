@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zehan Tian — Soprano</title>
-<meta name="description" content="Official website of Chinese soprano Zehan Tian. Opera performances, biography, videos, photographs, calendar, CV and contact information.">
+<title>Zehan Tian Soprano | Official Website</title>
+<meta name="description" content="Zehan Tian soprano official website. Discover Chinese soprano Zehan Tian's biography, opera performances, videos, photographs, calendar, CV and contact information.">
 <meta name="theme-color" content="#F7F3EB">
 
 <!-- Open Graph / social sharing -->
@@ -13,30 +13,53 @@
 <meta property="og:description" content="Official website of Chinese soprano Zehan Tian. Opera performances, biography, media and upcoming engagements.">
 <meta property="og:image" content="https://zehan-t.github.io/assets/images/og/og-image.jpg">
 <meta property="og:url" content="https://zehan-t.github.io/">
+<meta property="og:site_name" content="Zehan Tian Soprano">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://zehan-t.github.io/">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://zehan-t.github.io/#zehan-tian",
-  "name": "Zehan Tian",
-  "alternateName": "田泽涵",
-  "url": "https://zehan-t.github.io/",
-  "image": "https://zehan-t.github.io/assets/images/og/og-image.jpg",
-  "jobTitle": "Soprano",
-  "description": "Chinese lyric coloratura soprano and opera performer based in Austin, Texas.",
-  "alumniOf": [
-    {"@type": "CollegeOrUniversity", "name": "Indiana University Bloomington"},
-    {"@type": "CollegeOrUniversity", "name": "Xiamen University"}
-  ],
-  "affiliation": {
-    "@type": "CollegeOrUniversity",
-    "name": "The University of Texas at Austin"
-  },
-  "sameAs": [
-    "https://www.instagram.com/tiancici0519/"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://zehan-t.github.io/#website",
+      "url": "https://zehan-t.github.io/",
+      "name": "Zehan Tian Soprano",
+      "alternateName": ["Zehan Tian", "田泽涵"],
+      "description": "Official website of soprano Zehan Tian.",
+      "inLanguage": ["en", "zh"]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://zehan-t.github.io/#profile-page",
+      "url": "https://zehan-t.github.io/",
+      "name": "Zehan Tian Soprano | Official Website",
+      "isPartOf": {"@id": "https://zehan-t.github.io/#website"},
+      "mainEntity": {"@id": "https://zehan-t.github.io/#zehan-tian"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://zehan-t.github.io/#zehan-tian",
+      "name": "Zehan Tian",
+      "alternateName": "田泽涵",
+      "url": "https://zehan-t.github.io/",
+      "image": "https://zehan-t.github.io/assets/images/og/og-image.jpg",
+      "jobTitle": "Soprano",
+      "description": "Chinese lyric coloratura soprano and opera performer based in Austin, Texas.",
+      "knowsAbout": ["Opera", "Vocal performance", "Coloratura soprano", "Art song"],
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Indiana University Bloomington"},
+        {"@type": "CollegeOrUniversity", "name": "Xiamen University"}
+      ],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "The University of Texas at Austin"
+      },
+      "sameAs": [
+        "https://www.instagram.com/tiancici0519/"
+      ]
+    }
   ]
 }
 </script>
